@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -22,7 +25,7 @@
             <div class="container">
                 <svg class="navbar-brand"height="35" width="250">
                     <text x="3" y="15" fill="orange" style="font-family: Roboto;">IMangerMieux</text>
-                  </svg> 
+                </svg> 
                 <!--a class="navbar-brand" href="#page-top"><img src="assets/img/navbar-logo.svg" alt="..." /></a-->
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     Menu
@@ -30,7 +33,7 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
-                        <li class="nav-item"><a class="nav-link" href="#contact">Connexion</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#connexion">Connexion</a></li>
                         <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
                         <li class="nav-item"><a class="nav-link" href="#team">Team</a></li>
                         <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
@@ -41,25 +44,27 @@
         <!-- Masthead-->
         <header class="masthead">
             <div class="container">
-                <div class="masthead-subheading">Welcome, dear user!</div>
+                <div class="masthead-subheading">Welcome, dear user on</div>
                 <div class="masthead-heading text-uppercase">IMangerMieux</div>
-                <a class="btn btn-primary btn-xl text-uppercase" href="#services">Connexion</a>
+                <a class="btn btn-primary btn-xl text-uppercase" href="#services">Nos Services</a>
             </div>
         </header>
         <!-- Connexion-->
         </html>
-        <?php
+        <section class="connexion" id="connexion">
+            <?php
 
-        require_once("connexion.php");
+            require_once("connexion.php");
 
-        ?>
+            ?>
+        </section>
         <html>
         <!-- services Grid-->
         <section class="page-section bg-light" id="services">
             <div class="container">
                 <div class="text-center">
                     <h2 class="section-heading text-uppercase">services</h2>
-                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consecutetur.</h3>
+                    <h3 class="section-subheading text-muted">Prenez soin de votre ligne en ligne.</h3>
                 </div>
                 <div class="row">
                     <div class="col-lg-4 col-sm-6 mb-4">
@@ -159,8 +164,8 @@
         <section class="page-section bg-light" id="team">
             <div class="container">
                 <div class="text-center">
-                    <h2 class="section-heading text-uppercase">Our Amazing Team</h2>
-                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+                    <h2 class="section-heading text-uppercase">La belle équipe</h2>
+                    <h3 class="section-subheading text-muted">Les supers dev du site.</h3>
                 </div>
                 <div class="row">
                     <div class="col-lg-4">
@@ -179,6 +184,7 @@
                     </div>
                     <div class="col-lg-4">
                         <div class="team-member">
+                            <!--Met ton image Gaelle-->
                             <img class="mx-auto rounded-circle" src="assets/img/team/2.jpg" alt="..." />
                             <h4>Gaelle Erhart</h4>
                             <p class="text-muted">Dev too</p>
@@ -187,9 +193,6 @@
                             <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Diana Petersen LinkedIn Profile"><i class="fab fa-linkedin-in"></i></a>
                         </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-8 mx-auto text-center"><p class="large text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque, laboriosam veritatis, quos non quis ad perspiciatis, totam corporis ea, alias ut unde.</p></div>
                 </div>
             </div>
         </section>
@@ -271,15 +274,15 @@
         <footer class="footer py-4">
             <div class="container">
                 <div class="row align-items-center">
-                    <div class="col-lg-4 text-lg-start">Copyright &copy; Your Website 2022</div>
+                    <div class="col-lg-4 text-lg-start">Copyright &copy; IMangerMieux 2022</div>
                     <div class="col-lg-4 my-3 my-lg-0">
-                        <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                        <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                        <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a class="btn btn-dark btn-social mx-2" href="https://www.everydayim.com/" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a class="btn btn-dark btn-social mx-2" href="https://chrismckenzie.com/" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-dark btn-social mx-2" href="https://checkboxolympics.com/" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
                     </div>
                     <div class="col-lg-4 text-lg-end">
-                        <a class="link-dark text-decoration-none me-3" href="#!">Privacy Policy</a>
-                        <a class="link-dark text-decoration-none" href="#!">Terms of Use</a>
+                        <a class="link-dark text-decoration-none me-3" href="https://github.com/singepantsu/IDAW-projet">Privacy Policy</a>
+                        <a class="link-dark text-decoration-none" href="https://github.com/singepantsu/IDAW-projet">Terms of Use</a>
                     </div>
                 </div>
             </div>
