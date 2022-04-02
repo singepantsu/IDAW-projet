@@ -52,3 +52,33 @@ window.addEventListener('DOMContentLoaded', event => {
     });
 
 });
+
+function submission(data){
+    window.location = "connected.php";
+}
+
+// Alert for Password forgotten
+$('#PasswordForgot').click(function(){
+    window.alert("Try to remember.");
+});
+
+//Submit the connexion form
+$('#submit_form').click(function(){
+    if (($('#Login_form').val()=="") || ($('#Password_form').val()==""))
+        window.alert("Some data are still missing!");
+    else {
+        let log = $('#Login_form').val();
+        let pass = $('#Password_form').val();
+        let dataToSend= {log, pass};
+        $.post('../backend/connexion.php', dataToSend, function(data){
+            console.debug(data);
+            data = JSON.parse(data);
+            if (data == "failure"){
+                window.alert("Connexion impossible");
+            }
+            else {
+                submission(data);
+            }
+        })
+    }
+})

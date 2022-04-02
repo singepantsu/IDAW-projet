@@ -1,21 +1,32 @@
 <?php
-require "config.php";
+session_start();
+$servername = 'localhost';
+$username = 'root';
+$password = '';
+$database = 'imangermieux';
 
-function connected(){
-    return isset($_SESSION["username"]);
-}
+mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
+$connexion = new mysqli($servername, $username, $password, $database);
 
-function connexion(){
-    if (!connected()){
-        $_SESSION["username"];
+if($connexion->connect_error){
+    die('Erreur de connexion: ' .$connexion->connect_error);
+};
+
+if (isset($_POST["log"]) && (isset($_POST["pass"]))){
+    $login=$_POST["log"];
+    $password=$_POST["pass"];
+    $sql="Select * from utilisateur where LOGIN='".$login."' and MDP='".$password."'";
+    $result = $connexion->query($sql);
+    $data = $result->fetch_row();
+    if (!empty($data)){
+        $_SESSION["login"]=$login;
+        echo json_encode($data);
     }
-
-}
-
-function decconnexion(){
-    if (!connected()){
-        session_unset();
-        session_destroy();
+    else{
+        echo json_encode("failure");
     }
 }
+else{
+    echo json_encode("failure");
+};
 ?>
