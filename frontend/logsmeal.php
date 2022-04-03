@@ -52,7 +52,7 @@
             let name_add=$("#name_add").val();
             let dataToSend={name_add};
             $.post("../backend/getIdbyMeal.php", dataToSend, function(data){
-                console.debug(data);
+                //console.debug(data);
                 data=JSON.parse(data);
                 if (data == "failure")
                     window.alert("This meal is not in the database")
@@ -62,12 +62,14 @@
                     let date=$("#date_add").val()
                     let newData={name,quant,date};
                     $.post("../backend/addMeal.php", newData, function(data){
-                        console.debug(data);
+                        //console.debug(data);
                         data=JSON.parse(data);
                         if (data == "Failure")
                             window.alert("Add Fails");
                         else{
                             window.alert("Succesfuly Added");
+                            var t = $('#meal_table').DataTable();
+                            t.row.add([quant,name_add,date]).draw(false);
                         }
                     })
                 }
@@ -79,7 +81,7 @@
     type: 'GET',
     success: function(data){
         var t = $('#meal_table').DataTable();
-        console.debug(data);
+        //console.debug(data);
         data=JSON.parse(data);
         if (data == "failure")
             window.alert("No meal found");
