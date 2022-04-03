@@ -62,6 +62,36 @@ $('#PasswordForgot').click(function(){
     window.alert("Try to remember.");
 });
 
+//Submit the new account form
+$('#submit_new_account').click(function(){
+    if (($('#login_new').val()=="") || ($('#mdp_new').val()=="") || ($('birthday_new').val()=='') || ($('#name_new').val()=="") || ($('#surname_new').val()=="") || ($('#height_new').val()==0) || ($('#weight_new').val()==0) || ($('#age_new').val()==0)){
+        if (!(($('#sex_new').val()=="H") || ($('#sex_new').val()=="F"))){
+            window.alert("Enter valid data");
+        }
+    }
+    else{
+        let login=$('#login_new').val();
+        let mdp=$('#mdp_new').val();
+        let name=$('#name_new').val();
+        let surname=$('#surname_new').val();
+        let birthday=$('#birthday_new').val();
+        let height=$('#height_new').val();
+        let weight=$('#weight_new').val();
+        let age=$('#age_new').val();
+        let sex=$('#sex_new').val();
+        let dataToSend={login,mdp,name,surname,birthday,height,weight,age,sex};
+        console.debug(dataToSend);
+        $.post('../backend/createAccount.php', dataToSend, function(data){
+            console.debug(data);
+            data = JSON.parse(data);
+            //Verify if account already exist
+            if (data == "failure")
+                window.alert("Account Existing");
+            else
+                window.location="connected.php";
+        });
+    }
+});
 //Submit the connexion form
 $('#submit_form').click(function(){
     if (($('#Login_form').val()=="") || ($('#Password_form').val()==""))

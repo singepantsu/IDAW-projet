@@ -23,8 +23,15 @@
         $sex = $_POST['sex'];
         $query = "INSERT INTO utilisateur (`LOGIN`, DATE_NAISSANCE, TAILLE, AGE, POIDS, SEXE, NOM_UTIL, PRENOM_UTIL, MDP) VALUES ('$login', '$dateNaissance', '$height', '$age', '$weight', '$sex', '$name', '$surname', '$password')";
         $result = $connexion->query($query);
-        if($result)
+        if($result){
             $_SESSION["login"]=$login;
-            echo $connection->insert_id;
+            echo json_encode("victory");
+        }
+        else{
+            echo json_encode("failure");
+        }
+    }
+    else{
+        echo json_encode("failure");
     }
 ?>

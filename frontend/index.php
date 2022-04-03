@@ -36,7 +36,7 @@
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
                         <li class="nav-item"><a class="nav-link" href="#connexion">Connexion</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#account">New Account</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#services">New Account</a></li>
                         <li class="nav-item"><a class="nav-link" href="#team">Team</a></li>
                         <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
                     </ul>
@@ -48,7 +48,7 @@
             <div class="container">
                 <div class="masthead-subheading">Welcome, dear user on</div>
                 <div class="masthead-heading text-uppercase">IMangerMieux</div>
-                <a class="btn btn-primary btn-xl text-uppercase" href="#account">Create an Account</a>
+                <a class="btn btn-primary btn-xl text-uppercase" href="#services">Create an Account</a>
             </div>
         </header>
         <!-- Connexion-->
@@ -62,7 +62,7 @@
         </section>
         <html>
         <!-- Account creation-->
-        <section class="page-section bg-light" id="account">
+        <section class="page-section bg-light" id="services">
             <div class="container">
                 <div class="text-center">
                     <h2 class="section-heading text-uppercase">Create account</h2>
@@ -72,8 +72,9 @@
                     <div class="col-lg-4 col-sm-6 mb-4">   
                     </div>
                     <div class="col-lg-4 col-sm-6 mb-4">
+                        <!-- services item 2-->
                         <div class="services-item">
-                            <a class="services-link" data-bs-toggle="modal" href="#servicesModal1">
+                            <a class="services-link" data-bs-toggle="modal" href="#servicesModal2">
                                 <div class="services-hover">
                                     <div class="services-hover-content"><i class="fas fa-plus fa-3x"></i></div>
                                 </div>
@@ -81,7 +82,7 @@
                             </a>
                             <div class="services-caption">
                                 <div class="services-caption-heading">New Account?</div>
-                                <div class="services-caption-subheading text-muted">Join our community!</div>
+                                <div class="services-caption-subheading text-muted">Join our community</div>
                             </div>
                         </div>
                     </div>
@@ -215,29 +216,10 @@
                 </div>
             </div>
         </footer>
-        <!-- services Modals-->
-        <!-- services item 1 modal popup-->
-        <div class="services-modal modal fade" id="servicesModal1" tabindex="-1" role="dialog" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
-                    <div class="container">
-                        <div class="row justify-content-center">
-                            <div class="col-lg-8">
-                                <div class="modal-body">
-                                    <!-- Project details-->
-                                    <h2 class="text-uppercase">Create an account</h2>
-                                    <p class="item-intro text-muted">Just have to fill the form:</p>
-                                    <?php
-                                        require_once "newaccount.php";
-                                    ?>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <!-- connect item 1 modal popup-->
+        <?php
+            require_once "newaccount.php";
+        ?>
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->

@@ -29,7 +29,7 @@ require "starting.php";
         <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
             <div class="container">
                 <svg class="navbar-brand"height="35" width="250">
-                    <text x="3" y="15" fill="orange" style="font-family: Roboto;" id="user_session">IMangerMieux</text>
+                    <text x="3" y="15" fill="orange" style="font-family: Roboto;" id="user_session">Welcome <?php echo $_SESSION['login']?>!</text>
                 </svg> 
                 <!--a class="navbar-brand" href="#page-top"><img src="assets/img/navbar-logo.svg" alt="..." /></a-->
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -61,7 +61,7 @@ require "starting.php";
                     <br>
                         <?php
                             $user=$_SESSION["login"];
-                            echo "<h2 class=\"section-heading text-uppercase\">Welcome $user</h2>";
+                            echo "<h2 class=\"section-heading text-uppercase\">How are You doing, $user?</h2>";
                             echo "<input class=\"btn btn-primary btn-xl\" type=\"button\" id=\"Disconnect_button\"value=\"Disconnect\">";
                         ?>
                     <br>
@@ -83,11 +83,11 @@ require "starting.php";
                                 <div class="services-hover">
                                     <div class="services-hover-content"><i class="fas fa-plus fa-3x"></i></div>
                                 </div>
-                                <img class="img-fluid" src="assets/img/services/1.jpg" alt="..." />
+                                <img class="img-fluid" src="assets/img/services/1.png" alt="..." />
                             </a>
                             <div class="services-caption">
-                                <div class="services-caption-heading">Threads</div>
-                                <div class="services-caption-subheading text-muted">Illustration</div>
+                                <div class="services-caption-heading">My Profil</div>
+                                <div class="services-caption-subheading text-muted">Display your profil</div>
                             </div>
                         </div>
                     </div>
@@ -243,40 +243,9 @@ require "starting.php";
         </footer>
         <!-- services Modals-->
         <!-- services item 1 modal popup-->
-        <div class="services-modal modal fade" id="servicesModal1" tabindex="-1" role="dialog" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
-                    <div class="container">
-                        <div class="row justify-content-center">
-                            <div class="col-lg-8">
-                                <div class="modal-body">
-                                    <!-- Project details-->
-                                    <h2 class="text-uppercase">Project Name</h2>
-                                    <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                                    <img class="img-fluid d-block mx-auto" src="assets/img/services/1.jpg" alt="..." />
-                                    <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
-                                    <ul class="list-inline">
-                                        <li>
-                                            <strong>Client:</strong>
-                                            Threads
-                                        </li>
-                                        <li>
-                                            <strong>Category:</strong>
-                                            Illustration
-                                        </li>
-                                    </ul>
-                                    <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
-                                        <i class="fas fa-xmark me-1"></i>
-                                        Close Project
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <?php
+            require_once("displayprofil.php");
+        ?>
         <!-- services item 2 modal popup-->
         <div class="services-modal modal fade" id="servicesModal2" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog">
@@ -461,17 +430,11 @@ require "starting.php";
                     success: function(){
                         window.location.replace("index.php");
                     }})
-                
             });
         </script>
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
-        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-        <!-- * *                               SB Forms JS                               * *-->
-        <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
-        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-        <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
     </body>
 </html>
