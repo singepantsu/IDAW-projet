@@ -11,21 +11,22 @@
                                         <h4>Add sport:</h4>
                                     </div>
                                     <form id="add_sport">
-                                    <div class="row">
-                                        <div class="col">
-                                            <select id="sport_add">
-                                            </select>
-                                        </div>
-                                        <div class="col">
-                                            <select id="level_add" name="cars">
-                                            <option value="Nul">Legendary Bad</option>
-                                            <option value="Faible">Low</option>
-                                            <option value="Correct">Correct</option>
-                                            <option value="Intensif">High</option>
-                                            </select>
-                                        </div>
-                                        <div class="col">
-                                            <input class="btn btn-primary" id="send_sport" type="button" value="Add Sport">
+                                        <div class="row">
+                                            <div class="col">
+                                                <select id="sport_add">
+                                                </select>
+                                            </div>
+                                            <div class="col">
+                                                <select id="level_add" name="cars">
+                                                <option value="Nul">Legendary Bad</option>
+                                                <option value="Faible">Low</option>
+                                                <option value="Correct">Correct</option>
+                                                <option value="Intensif">High</option>
+                                                </select>
+                                            </div>
+                                            <div class="col">
+                                                <input class="btn btn-primary" id="send_sport" type="button" value="Add Sport">
+                                            </div>
                                         </div>
                                     </form>
                                     <div class="row">
