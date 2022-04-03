@@ -3,6 +3,7 @@
                 <div class="modal-content">
                     <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
                     <div class="container">
+                    <h2 class="text-uppercase">My profil</h2>
                         <form id="Account_form" >
                                     <div class="row">
                                         <div class="col">
