@@ -6,7 +6,6 @@
                         <div class="row justify-content-center">
                             <div class="col-lg-8">
                                 <div class="modal-body">
-                                    <!-- Project details-->
                                     <h2 class="text-uppercase">Your logs</h2>
                                     <div class="container">
                                         <form id="meal_form">

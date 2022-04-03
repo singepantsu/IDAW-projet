@@ -117,7 +117,7 @@ require "starting.php";
                             </a>
                             <div class="services-caption">
                                 <div class="services-caption-heading">Info Meals</div>
-                                <div class="services-caption-subheading text-muted">Check the nutritional value</div>
+                                <div class="services-caption-subheading text-muted">Check nutriments (lag on first click)</div>
                             </div>
                         </div>
                     </div>
@@ -131,8 +131,8 @@ require "starting.php";
                                 <img class="img-fluid" src="assets/img/services/4.jpg" alt="..." />
                             </a>
                             <div class="services-caption">
-                                <div class="services-caption-heading">Lines</div>
-                                <div class="services-caption-subheading text-muted">Branding</div>
+                                <div class="services-caption-heading">Your Sports</div>
+                                <div class="services-caption-subheading text-muted">Time to work!</div>
                             </div>
                         </div>
                     </div>
@@ -255,40 +255,9 @@ require "starting.php";
             require_once("infomeal.php");
         ?>
         <!-- services item 4 modal popup-->
-        <div class="services-modal modal fade" id="servicesModal4" tabindex="-1" role="dialog" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
-                    <div class="container">
-                        <div class="row justify-content-center">
-                            <div class="col-lg-8">
-                                <div class="modal-body">
-                                    <!-- Project details-->
-                                    <h2 class="text-uppercase">Project Name</h2>
-                                    <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                                    <img class="img-fluid d-block mx-auto" src="assets/img/services/4.jpg" alt="..." />
-                                    <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
-                                    <ul class="list-inline">
-                                        <li>
-                                            <strong>Client:</strong>
-                                            Lines
-                                        </li>
-                                        <li>
-                                            <strong>Category:</strong>
-                                            Branding
-                                        </li>
-                                    </ul>
-                                    <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
-                                        <i class="fas fa-xmark me-1"></i>
-                                        Close Project
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <?php
+            require_once("sports.php");
+        ?>
         <!-- services item 5 modal popup-->
         <div class="services-modal modal fade" id="servicesModal5" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog">
