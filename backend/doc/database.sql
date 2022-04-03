@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : lun. 21 mars 2022 à 15:46
+-- Généré le : dim. 03 avr. 2022 à 23:24
 -- Version du serveur : 5.7.36
 -- Version de PHP : 7.4.26
 
@@ -3267,9 +3267,16 @@ INSERT INTO `consomme` (`QUANTITE`, `DATE_CONSO`, `ID_ALI`, `LOGIN`) VALUES
 (4, '2022-03-11', '25581', 'lucas.arib@etu.imt-lille-douai.fr'),
 (3, '2022-03-05', '26267', 'nilavan.deva@etu.imt-lille-douai.fr'),
 (2, '2022-03-03', '26272', 'gaelle.erhart@etu.imt-lille-douai.fr'),
-(1, '2022-03-08', '25415', 'mekki.ben.hamidouche@etu.imt-lille-douai.fr'),
+(1, '2022-03-18', '25415', 'mekkiki'),
 (3, '2022-03-02', '8933', 'johan.gaudin@etu.imt-lille-douai.fr'),
-(3, '2022-03-17', '25018', 'sacha.sicoli@etu.imt-lille-douai.fr');
+(3, '2022-03-17', '25018', 'sacha.sicoli@etu.imt-lille-douai.fr'),
+(15, '2022-03-17', '25456', 'mekkiki'),
+(3, '2022-03-16', '20231', 'mekkiki'),
+(2, '2022-03-15', '20215', 'mekkiki'),
+(4, '2022-03-09', '1000', 'mekkiki'),
+(2, '2022-03-10', '1000', 'mekkiki'),
+(2, '2022-03-10', '20231', 'mekkiki'),
+(2, '2022-03-20', '20231', 'mekkiki');
 
 -- --------------------------------------------------------
 
@@ -19335,15 +19342,47 @@ INSERT INTO `nutriment` (`ID_NUTR`, `NOM_NUTR`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Structure de la table `pratique`
+--
+
+DROP TABLE IF EXISTS `pratique`;
+CREATE TABLE IF NOT EXISTS `pratique` (
+  `LOGIN` varchar(100) COLLATE utf8_bin NOT NULL,
+  `NIVEAU` set('Nul','Faible','Correct','Intensif') COLLATE utf8_bin NOT NULL,
+  `ID_SPORT` int(32) NOT NULL,
+  KEY `FOREIGN_KEY_1` (`ID_SPORT`),
+  KEY `FOREIGN_KEY_2` (`LOGIN`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+--
+-- Déchargement des données de la table `pratique`
+--
+
+INSERT INTO `pratique` (`LOGIN`, `NIVEAU`, `ID_SPORT`) VALUES
+('mekkiki', 'Correct', 1),
+('mekkiki', 'Faible', 2);
+
+-- --------------------------------------------------------
+
+--
 -- Structure de la table `sport`
 --
 
 DROP TABLE IF EXISTS `sport`;
 CREATE TABLE IF NOT EXISTS `sport` (
-  `ID_SPORT` varchar(32) COLLATE utf8_bin NOT NULL,
-  `NIVEAU` set('Nul','Faible','Correct','Intensif') COLLATE utf8_bin NOT NULL,
+  `ID_SPORT` int(32) NOT NULL AUTO_INCREMENT,
+  `NOM_SPORT` varchar(100) COLLATE utf8_bin NOT NULL,
   PRIMARY KEY (`ID_SPORT`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+--
+-- Déchargement des données de la table `sport`
+--
+
+INSERT INTO `sport` (`ID_SPORT`, `NOM_SPORT`) VALUES
+(1, 'Boxe'),
+(2, 'Tennis'),
+(3, 'Football');
 
 -- --------------------------------------------------------
 
@@ -19402,7 +19441,7 @@ INSERT INTO `utilisateur` (`LOGIN`, `DATE_NAISSANCE`, `TAILLE`, `AGE`, `POIDS`, 
 ('lucas.arib@etu.imt-lille-douai.fr', '2000-11-16', 181, 21, 85, 'H', 'ARIB', 'Lucas', 'Lulu'),
 ('mathis.jolivel@etu.imt-lille-douai.fr', '2000-12-12', 168, 21, 45, 'H', 'JOLIVEL', 'Mathis', 'Mama'),
 ('maxime.de.veyrac@etu.imt-lille-douai.fr', '2000-09-13', 183, 21, 76, 'H', 'DE VEYRAC', 'Maxime', 'Max'),
-('mekki.ben.hamidouche@etu.imt-lille-douai.fr', '1999-07-20', 180, 22, 64, 'H', 'BEN HAMIDOUCHE', 'Mekki', 'Kiki'),
+('mekkiki', '1999-07-20', 180, 22, 76, 'H', 'Mekki', 'BEN HAMIDOUCHE', 'Kiki'),
 ('nilavan.deva@etu.imt-lille-douai.fr', '1999-03-19', 192, 22, 67, 'H', 'DEVA', 'Nilavan', 'Nini'),
 ('pierre.martin@etu.imt-lille-douai.fr', '2000-04-16', 185, 21, 64, 'H', 'MARTIN', 'Pierre', 'Pipi'),
 ('sacha.sicoli@etu.imt-lille-douai.fr', '1999-06-14', 179, 22, 76, 'H', 'SICOLI', 'Sacha', 'Sach'),
@@ -19426,6 +19465,13 @@ ALTER TABLE `contient`
 ALTER TABLE `inclut`
   ADD CONSTRAINT `FOREIGN_KEY_5` FOREIGN KEY (`ID_ALI_1`) REFERENCES `aliment` (`ID_ALI`),
   ADD CONSTRAINT `FOREIGN_KEY_6` FOREIGN KEY (`ID_ALI_2`) REFERENCES `aliment` (`ID_ALI`);
+
+--
+-- Contraintes pour la table `pratique`
+--
+ALTER TABLE `pratique`
+  ADD CONSTRAINT `FOREIGN_KEY_1` FOREIGN KEY (`ID_SPORT`) REFERENCES `sport` (`ID_SPORT`),
+  ADD CONSTRAINT `FOREIGN_KEY_2` FOREIGN KEY (`LOGIN`) REFERENCES `utilisateur` (`LOGIN`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
