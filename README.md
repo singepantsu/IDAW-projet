@@ -4,11 +4,11 @@ Projet de l'UV IDAW with Miss Gaëlle Herard
 # Important
 
 - Utilisez le compte login:mekkiki password:Kiki
-- Créer une db sur localhost/phpmyadmin nommée imangermieux ou importer database.sql avec comme login="root" et password="".
+- Créer une db sur localhost/phpmyadmin nommée imangermieux où importer database.sql avec comme login="root" et password="".
 
 # Installation
 - Telecharger le zip et extraire dans le dossier www/ de wamp (ou simplement cloner le repo pour les habitués).
-- Importer database.sql dans backend/doc/ sur une nouvelle db imangermieux sur phpmyadmin.
+- Importer database.sql (dans backend/doc/) sur une nouvelle db imangermieux sur phpmyadmin.
 - Lancer dans le navigateur localhost/IDAW-projet/frontend/index.php (à adapter selon rennomage).
 - Enjoy!
 
